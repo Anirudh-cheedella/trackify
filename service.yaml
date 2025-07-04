@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  selector:
+    app: myapp
+  ports:
+    - protocol: TCP
+      port: 80       # The port to expose on the Service
+      targetPort: 80 # The port your container listens on
+  type: NodePort     # Use ClusterIP if internal-only; LoadBalancer if on cloud
